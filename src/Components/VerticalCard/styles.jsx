@@ -1,13 +1,19 @@
 import { makeStyles } from "@material-ui/core/styles";
 
 export default makeStyles({
-  media: {
+
+  root: {
+   
     height: 0,
     paddingTop: "56.25%",
     backgroundColor: "rgba(0, 0, 0, 0.5)",
     backgroundBlendMode: "darken",
     display:"flex",
     justifyContent: "center",
+  },
+
+  media: {
+   
     
   },
   border: {
@@ -26,7 +32,7 @@ export default makeStyles({
   },
   overlay: {
     position: "absolute",
-    // margin: "0",
+     margin: "0",
 
     top: "50%",
     transform: "translate(0, -50%)",

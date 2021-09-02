@@ -21,10 +21,9 @@ function VerticalCard({ data }) {
           to={`/details/${data.name}`}
           style={{ textDecoration: "none", color: "inherit" }}
         >
-          <CardMedia className={classes.media} image={data.url} title={"Cake"}>
+          <CardMedia className={classes.root} image={data.url}>
             <div className={classes.overlay}>
-              <Typography variant="h6">{data.name}</Typography>
-              <Typography varient="body2"></Typography>
+              <h2>{data.name}</h2>
             </div>
           </CardMedia>
         </Link>
