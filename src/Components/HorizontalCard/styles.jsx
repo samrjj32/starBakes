@@ -2,6 +2,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 export default makeStyles({
   media: {
+    display: "flex",
     // width: "100%",
     height: "100%",
     paddingTop: "56.25%",
