@@ -37,7 +37,7 @@ export default makeStyles({
     
   },
   detailsxs:{
-    fontSize: "11px"
+    fontSize: "9px"
   }
 
 });

@@ -56,7 +56,7 @@ function HorizontalCard(props) {
               >
                 {props.data.details}
               </Typography>
-              <Typography variant="body1" color="textSecondary">
+              <Typography className={showText ? classes.detailsxs : ""} variant="body1" color="textSecondary">
                 price :{props.data.price} rs
               </Typography>
 

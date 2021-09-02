@@ -31,7 +31,7 @@ import iceVannilla from "./imgs/icecreams/VanillaIce.jpg";
     type: "Cakes",
     name: "Vanilla cupcakes",
     details:
-      "These festive cakes are gluten, dairy, egg and nut free, and are great for kids' parties or a special treat.",
+      "These festive cakes are gluten, dairy, egg and nut free",
     url: cakeVanilla,
     price: "300",
     discount: "10%",
@@ -71,7 +71,7 @@ import iceVannilla from "./imgs/icecreams/VanillaIce.jpg";
     type: "Cakes",
     name: "Chocolate mud cake",
     details:
-      "We think we've found the ultimate mud cake - it's rich, dense and oh so chocolatey.",
+      "We think we've found the ultimate mud cake - it's rich, dense ",
     url: cakeChocolate,
     price: "500",
     discount: "10%",
@@ -102,7 +102,7 @@ import iceVannilla from "./imgs/icecreams/VanillaIce.jpg";
     type: "Sweets",
     name: "Ladoo",
     details:
-      "Laddu are ball-shaped sweets popular in the. Laddus are prepared with flour, kneaded dough and sugar.",
+      "Laddu are ball-shaped sweets popular in the. ",
     url: sweetsLaddoo,
     price: "100",
     discount: "10%",
@@ -121,7 +121,7 @@ import iceVannilla from "./imgs/icecreams/VanillaIce.jpg";
     type: "Sweets",
     name: "Jalebi",
     details:
-      "Jalebi is made by deep-frying the maida flour batter which is mostly in circular shapes",
+      "Jalebi is made by deep-frying the maida flour ",
     url: sweetsJalebi,
     price: "500",
     discount: "10%",
@@ -132,7 +132,7 @@ import iceVannilla from "./imgs/icecreams/VanillaIce.jpg";
     type: "IceCreams",
     name: "Chocolate",
     details:
-      "generally made by blending cocoa powder along with the eggs, cream, vanilla and sugar",
+      "generally made by blending cocoa powder along with the eggs,",
     url: iceChocolate,
     price: "100",
     discount: "10%",
@@ -142,7 +142,7 @@ import iceVannilla from "./imgs/icecreams/VanillaIce.jpg";
     type: "IceCreams",
     name: "Vanilla",
     details:
-      "most common and basic flavour of ice cream which is favourite amongst all.",
+      "most common and basic flavour of ice cream ",
     url: iceVannilla,
     price: "100",
     discount: "10%",
@@ -152,7 +152,7 @@ import iceVannilla from "./imgs/icecreams/VanillaIce.jpg";
     type: "IceCreams",
     name: "Strawberry",
     details:
-      "Strawberry ice cream is a flavor of ice cream made with strawberry or strawberry flavoring. ",
+      "Strawberry ice cream is a flavor of ice cream ",
     url: iceStrawberry,
     price: "120",
     discount: "10%",
