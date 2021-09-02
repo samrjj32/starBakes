@@ -7,6 +7,10 @@
   list-style: none;
   flex-direction: column;
 }
+.navbar .logo {
+    font-size: 18px;
+    font-weight: bolder;
+}
 
 .navbar .link {
   cursor: pointer;
@@ -98,7 +102,7 @@
     position: absolute;
     left: -110%;
     background-color: inherit;
-    top: 10vh;
+    top: 7.2vh;
     transition: all 0.5s ease;
   }
 

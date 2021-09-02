@@ -7,6 +7,7 @@ export default makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
     flexDirection: "column",
+    marginBottom: "500px"
   },
   cover: {
     margin: "20px",
@@ -25,7 +26,7 @@ export default makeStyles((theme) => ({
   emptyMessage: {
     display: "flex",
     justifyContent: "center",
-    marginBottom: "200px",
+    marginBottom: "570px",
     marginTop: "100px",
   },
 }));

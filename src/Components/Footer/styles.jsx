@@ -6,7 +6,7 @@ export default makeStyles({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-     marginTop: "200px",
+     marginTop: "100px",
    
   },
   content: {

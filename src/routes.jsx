@@ -6,7 +6,6 @@ import {
   withRouter,
   Redirect,
 } from "react-router-dom";
-import NavBar from "./Components/NavBar/NavBar";
 import Home from "./Pages/Home/Home";
 import Details from "./Pages/Details/Details";
 import Cart from "./Pages/Cart/Cart";

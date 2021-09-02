@@ -71,7 +71,7 @@ function Header() {
             <div className="three"></div>
           </div>
           <Link to="/">
-            <li>StarBacks</li>
+            <li className="logo">StarBacks</li>
           </Link>
         </div>
 
