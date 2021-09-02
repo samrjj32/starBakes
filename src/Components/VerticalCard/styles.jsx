@@ -8,7 +8,7 @@ export default makeStyles({
     paddingTop: "56.25%",
     backgroundColor: "rgba(0, 0, 0, 0.5)",
     backgroundBlendMode: "darken",
-    display:"flex",
+    display:"flex !important" ,
     justifyContent: "center",
   },
 
