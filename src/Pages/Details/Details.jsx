@@ -51,7 +51,7 @@ function Details({ setCurrentId }) {
 
   return (
     <section>
-    <div>
+    <div className={classes.main}>
       <div className={classes.heading}>
         <h3>
           {id}
