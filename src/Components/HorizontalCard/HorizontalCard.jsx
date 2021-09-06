@@ -22,11 +22,9 @@ function HorizontalCard(props) {
   const classes = useStyles();
   const params = useParams();
   const location = useLocation();
-  console.log(location);
   const theme = useTheme();
   const showText = useMediaQuery("(max-width:600px)");
 
-  console.log(showText, "haha");
 
   return (
     <div>

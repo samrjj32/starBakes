@@ -18,6 +18,7 @@ import data from "../../data/productData";
 import { useParams } from "react-router-dom";
 import { AddToCartContext } from "../../Contexts/CartContext";
 import ModalComponent from "../../Components/Modal/Modal";
+import { db } from "../../config/firebase";
 
 function Details({ setCurrentId }) {
   const cartValue = useContext(AddToCartContext);
@@ -27,7 +28,15 @@ function Details({ setCurrentId }) {
   const [placed, setPlaced] = useState(false);
   const [product, setProduct] = useState({});
 
-  let newData = data.filter((item) => item.type === id);
+  const [fetchProduct, setFetchProduct] = useState([]);
+
+  useEffect(() => {
+    db.collection("products").onSnapshot((snapshot) =>
+      setFetchProduct(snapshot.docs.map((doc) => doc.data()))
+    );
+  }, []);
+
+  let newData = fetchProduct.filter((item) => item.type === id);
 
   const handleSaveToCart = (item) => {
     setProduct(item);
@@ -50,38 +59,36 @@ function Details({ setCurrentId }) {
   };
 
   return (
-    <section>
-    <div>
-      <div className={classes.heading}>
-        <h3>
-          {id}
-        </h3>
+   
+      <div  className={classes.main}>
+        <div className={classes.heading}>
+          <h3>{id}</h3>
+        </div>
+        <Grid
+          className={classes.mainContainer}
+          container
+          alignItems="stretch"
+          // spacing={1}
+        >
+          {newData.map((post) => (
+            <Grid key={post} item xs={8} sm={12} className={classes.cover}>
+              <HorizontalCard
+                data={post}
+                saveToCart={() => handleSaveToCart(post)}
+                cart={false}
+              />
+            </Grid>
+          ))}
+        </Grid>
+        <ModalComponent
+          handleClose={closeModal}
+          handleOpen={openModal}
+          open={open}
+          handlePlaceOrder={placeOrder}
+          placed={placed}
+        />
       </div>
-      <Grid
-        className={classes.mainContainer}
-        container
-        alignItems="stretch"
-       // spacing={1}
-      >
-        {newData.map((post) => (
-          <Grid key={post} item xs={8} sm={12} className={classes.cover}>
-            <HorizontalCard
-              data={post}
-              saveToCart={() => handleSaveToCart(post)}
-              cart={false}
-            />
-          </Grid>
-        ))}
-      </Grid>
-      <ModalComponent
-        handleClose={closeModal}
-        handleOpen={openModal}
-        open={open}
-        handlePlaceOrder={placeOrder}
-        placed={placed}
-      />
-    </div>
-    </section>
+   
   );
 }
 

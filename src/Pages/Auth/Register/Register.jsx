@@ -13,16 +13,25 @@ import {
   Grid,
 } from "@material-ui/core/";
 import { FormatColorResetRounded } from "@material-ui/icons";
-import { UserContext } from "../../Contexts/UserContext";
-import { db, auth } from "../../config/firebase";
+import { UserContext } from "../../../Contexts/UserContext";
+import { db, auth } from "../../../config/firebase";
 
-function Authentication() {
+function Register() {
   let history = useHistory();
 
   const userValue = useContext(UserContext);
   const classes = useStyles();
-  const [userdata, setUserData] = useState({ email: "", password: "" });
-  const [error, setError] = useState({ email: false, password: false });
+  const [userdata, setUserData] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
+  const [error, setError] = useState({
+    name: false,
+    email: "",
+    password: false,
+  });
+
   const [errorMessage, setErrorMessage] = useState("");
 
   const handleChangeInput = (e) => {
@@ -34,6 +43,10 @@ function Authentication() {
   const validation = (name, value) => {
     let validateResults;
     switch (name) {
+      case "name": {
+        validateResults = value ? false : true;
+        break;
+      }
       case "email": {
         validateResults = value ? false : true;
         break;
@@ -49,67 +62,61 @@ function Authentication() {
     return validateResults;
   };
 
-  // const handleSave = () => {
-  //   const { email, password } = userdata;
+  const handleSave = () => {
+    const { name, email, password } = userdata;
 
-  //   if (username && password) {
-  //     console.log(userdata, "user has been registered");
-  //     userValue.adduser(userdata);
-  //     setTimeout(() => ToPath(), 1000);
-  //   } else {
-  //     setError({
-  //       ...error,
-  //       username: !username ? true : false,
-  //       password: !password ? true : false,
-  //     });
-  //   }
-  // };
-
-  const login = (e) => {
-    e.preventDefault();
-    const { email, password } = userdata;
-    if (email && password) {
+    if (name && password) {
       auth
-        .signInWithEmailAndPassword(email, password)
+        .createUserWithEmailAndPassword(email, password)
         .then((userAuth) => {
-          // Signed in
-          const user = userAuth.user;
-          userValue.adduser({
-            name: user.displayName,
-            email: user.email,
-            userId: user.uid,
-          });
-
-         
-
+          userAuth.user
+            .updateProfile({
+              displayName: name,
+            })
+            .then((data) => {
+              userValue.adduser({
+                name: name,
+                email: userAuth.user.email,
+                userId: userAuth.user.uid,
+              });
+            });
           setTimeout(() => ToPath(), 1000);
-          // ...
         })
-        .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          console.log(error.message);
-          setErrorMessage(error.message);
-        });
+        .catch((error) => setErrorMessage(error.message));
+
+      //   setTimeout(() => ToPath(), 1000);
     } else {
       setError({
         ...error,
+        name: !name ? true : false,
         email: !email ? true : false,
         password: !password ? true : false,
       });
     }
   };
-
   const ToPath = () => {
     history.push("/");
   };
   return (
     <div className={classes.main}>
       <div>
-        <h3>{"please Login"}</h3>
+        <h3>{"please Register"}</h3>
       </div>
       <Card className={classes.card}>
         <div className={classes.content}>
+          <TextField
+            error={error.username}
+            id="outlined-error-helper-text"
+            label="name"
+            name="name"
+            // defaultValue="Hello World"
+            helperText={`${error.username ? "name cannot be empty." : ""}`}
+            variant="outlined"
+            onChange={handleChangeInput}
+            inputProps={{
+              autoComplete: "off",
+            }}
+          />
           <TextField
             error={error.username}
             id="outlined-error-helper-text"
@@ -152,16 +159,16 @@ function Authentication() {
             color="primary"
             className={classes.button}
             // startIcon={<PlaceIcon />}
-            onClick={login}
+            onClick={handleSave}
           >
-            Login
+            Register
           </Button>
         </div>
         <span className={classes.info}>
-          <p>Not a member </p>
-          <Link to="/register">
+          <p>already a member </p>
+          <Link to="/auth">
             {" "}
-            <p className={classes.infotext}> Register </p>
+            <p className={classes.infotext}> Login </p>
           </Link>
         </span>
       </Card>
@@ -169,4 +176,4 @@ function Authentication() {
   );
 }
 
-export default Authentication;
+export default Register;

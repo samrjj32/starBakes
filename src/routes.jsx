@@ -10,6 +10,7 @@ import Home from "./Pages/Home/Home";
 import Details from "./Pages/Details/Details";
 import Cart from "./Pages/Cart/Cart";
 import Authentication from "./Pages/Auth/Authentication";
+import Register from "./Pages/Auth/Register/Register";
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
 
@@ -21,7 +22,8 @@ function Routes() {
         <Route path="/" exact component={Home} />
         <Route path="/cart" exact component={Cart} />
         <Route path="/details/:id" exact component={Details} />
-        <Route path="/auth" exact component={Authentication} />
+        <Route path="/auth" exact component={Authentication} /> 
+        <Route path="/register" exact component={Register} />
       </Switch>
       <Footer />
     </Router>

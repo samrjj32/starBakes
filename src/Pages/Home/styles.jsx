@@ -2,7 +2,11 @@ import { makeStyles } from "@material-ui/core/styles";
 
 export default makeStyles((theme) => ({
   main: {
-    // height: "300px",
+    height: "100vh",
+    display: "flex",
+    flexDirection:"column",
+    alignItems: "center",
+    justifyContent: "end",
   },
   cover: {
     margin: "20px",

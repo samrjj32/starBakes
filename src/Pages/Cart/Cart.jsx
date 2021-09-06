@@ -26,7 +26,7 @@ function Cart({ setCurrentId }) {
   };
 
   return (
-    <div>
+    <div  className={classes.main}>
       <div className={classes.heading}>
         <h3>{"Cart Items"}</h3>
       </div>

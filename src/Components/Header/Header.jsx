@@ -30,7 +30,6 @@ function Header() {
     SetNav((prev) => !prev);
   };
 
-  console.log(document.querySelector(".burger-menu"));
 
   const handleLogout = () => {
     userValue.removeUser();
@@ -77,7 +76,7 @@ function Header() {
 
         <div className="nav-right">
           <Typography className="name" variant="body2" noWrap>
-            {userValue.user ? ` hey, ${userValue.user.username}` : ""}
+            {userValue.user ? ` hey, ${userValue.user.name}` : ""}
           </Typography>
           {userValue.user ? (
             <li>

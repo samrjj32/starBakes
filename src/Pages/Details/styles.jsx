@@ -1,12 +1,15 @@
 import { makeStyles } from "@material-ui/core/styles";
 
 export default makeStyles((theme) => ({
+  main: {
+    minHeight: "100vh",
+  },
   mainContainer: {
     display: "flex",
     flexWrap: "wrap",
     justifyContent: "center",
-     alignItems: "center",
-     flexDirection:"column"
+    alignItems: "center",
+    flexDirection: "column",
   },
   cover: {
     margin: "20px",
@@ -14,7 +17,7 @@ export default makeStyles((theme) => ({
   heading: {
     display: "flex",
     justifyContent: "center",
-    marginBottom:"20px"
+    marginBottom: "20px",
   },
   smMargin: {
     margin: theme.spacing(1),

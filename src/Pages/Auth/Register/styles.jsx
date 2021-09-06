@@ -10,12 +10,11 @@ export default makeStyles({
     justifyContent: "center",
   },
   main: {
-    height:"100vh",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-   
+    marginBottom: "400px",
   },
 
   card: {
@@ -24,7 +23,7 @@ export default makeStyles({
     justifyContent: "space-between",
     alignItems: "center",
     borderRadius: "15px",
-    height: "300px",
+    height: "400px",
     width: "70%",
     padding: "10px",
     // position: "relative",
@@ -52,9 +51,9 @@ export default makeStyles({
     fontSize: "14px",
     fontWeight: "800",
   },
-  dbmessage: {
+  dbmessage:{
     color: "red",
     fontSize: "14px",
     fontWeight: "800",
-  },
+  }
 });
