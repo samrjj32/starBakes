@@ -2,7 +2,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 export default makeStyles((theme) => ({
   main: {
-    // height: "300px",
+    height: "100vh",
   },
   cover: {
     margin: "20px",
