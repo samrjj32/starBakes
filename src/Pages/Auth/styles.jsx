@@ -7,7 +7,7 @@ export default makeStyles({
     backgroundColor: "rgba(0, 0, 0, 0.5)",
     backgroundBlendMode: "darken",
     display: "flex",
-    justifyContent: "center",
+    // justifyContent: "center",
   },
   main: {
     height:"100vh",

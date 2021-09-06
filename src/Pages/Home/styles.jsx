@@ -6,7 +6,7 @@ export default makeStyles((theme) => ({
     display: "flex",
     flexDirection:"column",
     alignItems: "center",
-    justifyContent: "end",
+    // justifyContent: "end",
   },
   cover: {
     margin: "20px",
