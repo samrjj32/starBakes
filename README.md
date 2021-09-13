@@ -1,3 +1,3 @@
 
-:point_right: live preview https://starbakes-demo.netlify.app/.
-
+:point_right: live preview https://starbakesclone1.netlify.app/
+     
